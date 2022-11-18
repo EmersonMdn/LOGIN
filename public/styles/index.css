@@ -103,18 +103,18 @@ main input {
   margin-bottom: 100px;
 }
 
-table {
+.main-index table {
   border: 2px solid rgb(209, 209, 209);
   width: 50rem;
   margin: 20px auto;
 }
-table td {
+.main-index table td {
   text-align: center;
 }
-table img {
+.main-index table img {
   height: 100px;
 }
-ul li {
+.main-index ul li {
   list-style: none;
   background-color: #fff;
 }
@@ -122,7 +122,7 @@ ul li {
   background-color: red;
 }
 
-button {
+.main-index button {
   background-color: rgb(70, 129, 255);
   height: 70px;
   width: 100%;
