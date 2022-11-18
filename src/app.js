@@ -11,6 +11,8 @@ const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
+
+//MONGO ATLAS
 app.use(
   session({
     secret: "7fhj383hf26o1i7",
@@ -18,7 +20,7 @@ app.use(
       mongoUrl:
         "mongodb+srv://EmersonMdn:Loque.321@cluster0.0llifr1.mongodb.net/sesiones?retryWrites=true&w=majority",
       mongoOptions: advancedOptions,
-      ttl: 600,
+      ttl: 600, //10mins
     }),
     resave: false,
     saveUninitialized: false,
