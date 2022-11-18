@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Roboto&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: Poppins;
   flex-direction: column;
@@ -18,7 +23,6 @@ body {
     ),
     url("https://img.freepik.com/vector-gratis/gran-ola-oceano-estilo-japones-salpicaduras-agua-espacio-tormenta-naturaleza-meteorologica-dibujado-mano-ilustracion-vector-ola-grande_1284-46205.jpg?w=996&t=st=1668807129~exp=1668807729~hmac=e2eef6b142549dfc29e6fd1c29007434d28d89be31e74c5a2e1c7b7486ce4a15");
   background-size: cover;
-  font-family: Poppins;
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -62,6 +66,9 @@ body {
   padding: 10px 40px;
   border-radius: 20px;
   border: none;
+}
+.welcome a {
+  text-decoration: none;
 }
 .index-body {
   background: rgb(37, 37, 37);

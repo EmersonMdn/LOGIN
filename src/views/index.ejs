@@ -15,55 +15,8 @@
         <a class="btn" href="/logout">Log out</a>
     </div>
 
-    <main class="main-index">
-        <div id="add-product">
-            <h2>AGREGAR PRODUCTO</h2>
-            <form method="POST" action="/api/product">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title-input" placeholder="Write title" />
+    <%- include('./include/main.ejs'); -%>
 
-                <label for="price">Price</label>
-                <input type="number" name="price" id="price-input" placeholder="Put price" />
-
-                <label for="thumbnail">Thumbnail</label>
-                <input type="text" name="thumbnail" id="thumbnail" placeholder="Thumbnail url" />
-
-                <button>AGREGAR</button>
-            </form>
-        </div>
-        <div id="list-products">
-            <h2>Products</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Productos</th>
-                        <th>Precio</th>
-                        <th>Thumbnail</th>
-                    </tr>
-                </thead>
-
-                <tbody id="tbody">
-                </tbody>
-            </table>
-        </div>s
-
-        <div id="chat-box">
-            <h3>Chat with us!</h3>
-            <form>
-                <input type="email" id="mailInput" placeholder="Ingrese su mail" required>
-                <input type="text" id="nameInput" placeholder="Juan" required>
-                <input type="text" id="lastNameInput" placeholder="Perez" required>
-                <input type="text" id="aliasInput" placeholder="JuanP" required>
-                <input type="number" id="ageInput" placeholder="34" required>
-                <input type="text" id="avatarInput" placeholder="http://avatar.jpg/" required>
-
-                <ul id="messages"></ul>
-
-                <input type="text" id="messageInput" placeholder="Write message">
-                <button>Enviar</button>
-            </form>
-        </div>
-    </main>
 </body>
 
 </html>
