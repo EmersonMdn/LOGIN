@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<% include('./include/head.ejs') %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>MY APP</title>
+</head>
 
-<body>
-    <form action="/login" method="post">
-        <h1>FORMULARIO DE INICIO</h1>
+<body class="login-body">
+    <form action="/login" method="post" class="form-login">
+        <h1>Bienvenido</h1>
         <label for="userId">Usuario</label>
-        <input type="text" name="user" id="user" placeholder="Ingrese su nombre de usuario">
-        <button type="submit">INGRESAR</button>
+        <input class="input" type="text" name="user" id="user" placeholder="Username">
+        <button type="submit" class="btn">INGRESAR</button>
     </form>
 </body>
 
