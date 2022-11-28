@@ -1,19 +1,37 @@
 const router = require("express").Router();
-const session = require("express-session");
-const path = require("path");
+const passport = require("passport");
+const { Strategy } = require("passport-local");
+const Usuarios = require("../model/Usuarios.schema.js");
+
+
 
 router.get("/", (req, res) => {
-  if (req.session.isUser) {
-    console.log(req.session.isUser);
-    res.render("index", { user: req.session.isUser });
+  if (req.session.user) {
+    res.render("index", { user: req.session.user });
+  } else {
+    res.render("login");
+  }
+});
+router.get("/login", (req, res) => {
+  if (req.session.user) {
+    res.redirect("/");
   } else {
     res.render("login");
   }
 });
 
-router.post("/login", (req, res) => {
-  const { user } = req.body;
-  req.session.isUser = user;
+router.get("/register", (req, res) => {
+  res.render("register");
+});
+router.post("/register", passport.authenticate("register"), (req, res) => {
+  const { username } = req.body;
+  req.session.user = username;
+  res.redirect("/");
+});
+
+router.post("/login", passport.authenticate("login"), (req, res) => {
+  const { username } = req.body;
+  req.session.user = username;
   res.redirect("/");
 });
 
