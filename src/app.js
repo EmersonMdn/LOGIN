@@ -2,15 +2,14 @@ const express = require("express");
 const app = express();
 const port = 8080;
 const path = require("path");
-const passport = require("passport");
 const session = require("express-session");
 const mongoose = require("mongoose");
-const Config = require("./utils/config.js"); //Configuracion de mongoconst 
-
+const Config = require("./utils/config.js"); //Configuracion de mongoconst
+const passport = require("passport");
 
 //MIDDLEWARES
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "../public")));
 
 //SESSION
@@ -18,9 +17,9 @@ app.use(
   session({
     secret: "?topsecret_",
     cookie: {
-      maxAge: 6000,
+      maxAge: 60000,
     },
-    resave: false,
+    resave: true,
     saveUninitialized: false,
   })
 );

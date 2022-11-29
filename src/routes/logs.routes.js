@@ -2,18 +2,23 @@ const router = require("express").Router();
 const passport = require("passport");
 const Usuarios = require("../model/Usuarios.schema.js");
 const { Strategy } = require("passport-local");
+const bcrypt = require("bcryptjs");
+
+const authMW = (req, res, next) => {
+  req.isAuthenticated() ? next() : res.redirect("/login");
+};
 
 passport.use(
   "register",
   new Strategy({ passReqToCallback: true }, (req, username, password, done) => {
     const { email } = req.body;
-    Usuarios.findOne({ username }, (err, user) => {
-      if (user) return done(null, false);
+    const passwordBcrypt = bcrypt.hashSync(password, 9); // Encrypt password
+    Usuarios.findOne({ username }, (err, usuario) => {
+      if (usuario) return done(null, false);
 
-      Usuarios.create({ username, password, email }, (err, usuarios) => {
+      Usuarios.create({ username, passwordBcrypt, email }, (err, usuario) => {
         if (err) return done(err);
-        console.log("creado");
-        return done(null, usuarios);
+        return done(null, usuario);
       });
     });
   })
@@ -30,27 +35,19 @@ passport.use(
   })
 );
 
-passport.serializeUser((user, done) => {
-  done(null, user._id);
+passport.serializeUser((usuario, done) => {
+  done(null, usuario._id);
 });
 
 passport.deserializeUser((id, done) => {
   Usuarios.findOne({ id, done });
 });
 
-router.get("/", (req, res) => {
-  if (req.session.user) {
-    res.render("index", { user: req.session.user });
-  } else {
-    res.render("login");
-  }
+router.get("/", authMW, (req, res) => {
+  res.render("index", { user: req.usuario });
 });
 router.get("/login", (req, res) => {
-  if (req.session.user) {
-    res.redirect("/");
-  } else {
-    res.render("login");
-  }
+  res.render("login");
 });
 
 router.get("/register", (req, res) => {
@@ -60,8 +57,6 @@ router.post(
   "/register",
   passport.authenticate("register", { failureRedirect: "/error" }),
   (req, res) => {
-    const { username } = req.body;
-    req.session.user = username;
     res.redirect("/");
   }
 );
@@ -70,8 +65,6 @@ router.post(
   "/login",
   passport.authenticate("login", { failureRedirect: "/error" }),
   (req, res) => {
-    const { username } = req.body;
-    req.session.user = username;
     res.redirect("/");
   }
 );
