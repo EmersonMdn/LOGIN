@@ -5,54 +5,18 @@ const path = require("path");
 const passport = require("passport");
 const session = require("express-session");
 const mongoose = require("mongoose");
-const Config = require("./utils/config.js"); //Configuracion de mongoconst { Strategy } = require("passport-local");
-const Usuarios = require("./model/Usuarios.schema.js");
-const { Strategy } = require("passport-local");
+const Config = require("./utils/config.js"); //Configuracion de mongoconst 
+
 
 //MIDDLEWARES
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "../public")));
 
-passport.use(
-  "register",
-  new Strategy({ passReqToCallback: true }, (req, username, password, done) => {
-    const { email } = req.body;
-    Usuarios.findOne({ username }, (err, user) => {
-      if (user) return done(null, false);
-
-      Usuarios.create({ username, password, email }, (err, usuarios) => {
-        if (err) return done(err);
-        console.log("creado");
-        return done(null, usuarios);
-      });
-    });
-  })
-);
-
-passport.use(
-  "login",
-  new Strategy({}, (username, password, done) => {
-    Usuarios.findOne({ username, password }, (err, usuario) => {
-      if (err) return done(err);
-      if (!usuario) return done(null, false);
-      done(null, usuario);
-    });
-  })
-);
-
-passport.serializeUser((user, done) => {
-  done(null, user._id);
-});
-
-passport.deserializeUser((id, done) => {
-  Usuarios.findOne({ id });
-});
-
 //SESSION
 app.use(
   session({
-    secret: "3fsgdf5",
+    secret: "?topsecret_",
     cookie: {
       maxAge: 6000,
     },
