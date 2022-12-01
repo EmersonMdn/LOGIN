@@ -4,22 +4,36 @@ const Usuarios = require("../model/Usuarios.schema.js");
 const { Strategy } = require("passport-local");
 const bcrypt = require("bcryptjs");
 
+//VERIFICAR QUE SE HAYA INICIADO SESION
 const authMW = (req, res, next) => {
   req.isAuthenticated() ? next() : res.redirect("/login");
 };
+//ENCRIPTADO DE CONTRASEÑA CON bcrypt
+const encryptPassword = (pass) => {
+  return bcrypt.hashSync(pass, 9);
+};
+//COMPARAR QUE AMBAS CONTRASEÑAS COINCIDAN
+const comparePassword = (pass1, pass2) => {
+  return bcrypt.compareSync(pass1, pass2);
+};
+
+////////* PASSPORT /////////////
 
 passport.use(
   "register",
   new Strategy({ passReqToCallback: true }, (req, username, password, done) => {
     const { email } = req.body;
-    const passwordBcrypt = bcrypt.hashSync(password, 9); // Encrypt password
     Usuarios.findOne({ username }, (err, usuario) => {
       if (usuario) return done(null, false);
 
-      Usuarios.create({ username, passwordBcrypt, email }, (err, usuario) => {
-        if (err) return done(err);
-        return done(null, usuario);
-      });
+      Usuarios.create(
+        //CREACION DE USUARIO
+        { username, password: encryptPassword(password), email },
+        (err, usuario) => {
+          if (err) return done(err);
+          return done(null, usuario);
+        }
+      );
     });
   })
 );
@@ -27,9 +41,11 @@ passport.use(
 passport.use(
   "login",
   new Strategy({}, (username, password, done) => {
-    Usuarios.findOne({ username, password }, (err, usuario) => {
+    Usuarios.findOne({ username }, (err, usuario) => {
       if (err) return done(err);
       if (!usuario) return done(null, false);
+      if (!comparePassword(password, usuario.password))
+        return done(null, false);
       done(null, usuario);
     });
   })
@@ -40,11 +56,13 @@ passport.serializeUser((usuario, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  Usuarios.findOne({ id, done });
+  Usuarios.findById(id, done);
 });
 
+//////////* RUTAS ////////////
+
 router.get("/", authMW, (req, res) => {
-  res.render("index", { user: req.usuario });
+  res.render("index", { user: req.user.username });
 });
 router.get("/login", (req, res) => {
   res.render("login");

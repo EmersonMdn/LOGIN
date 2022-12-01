@@ -10,20 +10,23 @@
 </head>
 
 <body class="login-body">
-    <form action="/login" method="post" class="form-login">
+
+    <form action="/register" method="POST" class="form-login">
+
         <h1>Bienvenido/a!</h1>
         <label for="userInput">Nombre</label>
-        <input class="input" type="text" name="username" id="userInput" placeholder="Username">
+        <input class="input" type="text" name="username" id="username" placeholder="Username">
 
         <label for="emailInput">Email</label>
-        <input class="input" type="email" name="email" id="emailInput" placeholder="Email">
+        <input class="input" type="email" name="email" id="email" placeholder="Email">
 
         <label for="passwordInput">Password</label>
-        <input class="input" type="password" name="password" id="passwordInput" placeholder="Password">
+        <input class="input" type="password" name="password" id="password" placeholder="Password">
 
         <button type="submit" class="btn">REGISTRAR</button>
 
         <small><a href="/login">Iniciar sesion</a></small>
+
     </form>
 </body>
 
