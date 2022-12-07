@@ -1,6 +1,9 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const Configs = {
   mongoDB: {
-    url: "mongodb+srv://EmersonMdn:Loque.321@cluster0.0llifr1.mongodb.net/coder?retryWrites=true&w=majority",
+    url: process.env.MONGO_URL, ////? URL A LA CONEXION DE MONGODB
     options: {
       serverSelectionTimeoutMS: 5000,
       useNewUrlParser: true,

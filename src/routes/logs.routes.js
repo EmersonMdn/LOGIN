@@ -96,4 +96,17 @@ router.get("/error", (req, res) => {
   res.render("error");
 });
 
+router.get("/info", (req, res) => {
+  const i = {
+    argv: process.argv,
+    platforma: process.platform,
+    // nodeVersion: no encontre el proceso
+    memoria: process.memoryUsage().rss,
+    execPath: process.execPath,
+    processID: process.pid,
+    directorio: process.cwd(),
+  };
+  res.send(i);
+});
+
 module.exports = router;

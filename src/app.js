@@ -1,11 +1,24 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 const path = require("path");
 const session = require("express-session");
 const mongoose = require("mongoose");
 const Config = require("./utils/config.js"); //Configuracion de mongodb
 const passport = require("passport");
+const Yargs = require("yargs/yargs");
+
+//? CONFIGURACION DE SET DE PUERTO CON YARGS
+const yargs = Yargs(process.argv.slice(2));
+const config_Yarg = yargs
+  .alias({
+    p: "puerto",
+  })
+  .default({
+    puerto: 8080, //PUERTO POR DEFECTO
+  }).argv;
+
+const { puerto } = config_Yarg;
 
 //MIDDLEWARES
 app.use(express.json());
@@ -33,8 +46,9 @@ app.set("view engine", "ejs"); // ejs como plantilla a utilizar
 
 //ROUTES
 app.use(require("./routes/logs.routes.js"));
+app.use(require("./routes/random.routes.js"));
 
-app.listen(port, () => {
+app.listen(puerto, () => {
   mongoose.connect(Config.mongoDB.url, Config.mongoDB.options, (error) => {
     //CONEXION CON MONGO
     if (error) {
@@ -43,5 +57,5 @@ app.listen(port, () => {
     }
     console.log("mongoDB connected!");
   });
-  console.log(`Conectado al puerto ${port}!`);
+  console.log(`Conectado al puerto ${puerto}!`);
 });
