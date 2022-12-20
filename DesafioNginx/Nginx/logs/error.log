@@ -1,0 +1,63 @@
+2022/12/20 14:44:41 [notice] 17784#6936: signal process started
+2022/12/20 14:44:41 [error] 17784#6936: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 14:45:17 [notice] 10428#7616: signal process started
+2022/12/20 14:45:17 [error] 10428#7616: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 14:51:26 [notice] 4844#12000: signal process started
+2022/12/20 14:51:43 [notice] 2684#2088: signal process started
+2022/12/20 14:53:13 [error] 16100#9648: *1 CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/"
+2022/12/20 14:54:06 [notice] 10572#2096: signal process started
+2022/12/20 15:11:23 [notice] 1252#12120: signal process started
+2022/12/20 15:11:30 [error] 6552#10512: *7 CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:8081", referrer: "http://localhost:8081/"
+2022/12/20 15:38:18 [emerg] 6388#9596: invalid parameter "weigth=3" in C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/conf/nginx.conf:36
+2022/12/20 15:38:55 [emerg] 11640#8796: invalid parameter "weigth=3" in C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/conf/nginx.conf:36
+2022/12/20 15:39:14 [emerg] 17740#12540: unexpected "}" in C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/conf/nginx.conf:55
+2022/12/20 15:39:52 [notice] 1592#11508: signal process started
+2022/12/20 15:41:22 [notice] 5568#16320: signal process started
+2022/12/20 15:42:09 [notice] 1380#3168: signal process started
+2022/12/20 15:42:17 [error] 11368#15008: *37 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:42:44 [error] 11368#15008: *39 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:44:05 [notice] 17252#14788: signal process started
+2022/12/20 15:44:14 [error] 2528#9492: *84 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8083/", host: "localhost:8080"
+2022/12/20 15:44:38 [error] 2528#9492: *88 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8083/", host: "localhost:8080"
+2022/12/20 15:44:40 [error] 2528#9492: *88 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:46:02 [error] 2528#9492: *102 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:46:37 [notice] 3108#8224: signal process started
+2022/12/20 15:46:46 [error] 6924#15776: *133 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:47:44 [notice] 15500#2396: signal process started
+2022/12/20 15:47:58 [error] 14456#11100: *1 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:48:49 [notice] 3188#11880: signal process started
+2022/12/20 15:48:49 [error] 3188#11880: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 15:49:08 [notice] 3656#4004: signal process started
+2022/12/20 15:49:08 [error] 3656#4004: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 15:49:36 [notice] 7044#16416: signal process started
+2022/12/20 15:49:36 [error] 7044#16416: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 15:49:52 [error] 14456#11100: *14 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:50:06 [notice] 12756#12096: signal process started
+2022/12/20 15:50:13 [error] 14456#11100: *14 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:50:29 [error] 14456#11100: *14 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 15:54:02 [notice] 9372#5184: signal process started
+2022/12/20 16:25:31 [error] 14456#11100: *116 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8081/", host: "localhost:8080"
+2022/12/20 16:25:39 [error] 14456#11100: *152 connect() failed (10061: No connection could be made because the target machine actively refused it) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET /node/ HTTP/1.1", upstream: "http://127.0.0.1:8083/", host: "localhost:8080"
+2022/12/20 16:28:01 [notice] 3456#13652: signal process started
+2022/12/20 16:28:11 [notice] 8580#17696: signal process started
+2022/12/20 16:28:11 [error] 8580#17696: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:29:23 [notice] 11508#14768: signal process started
+2022/12/20 16:29:23 [error] 11508#14768: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:29:30 [notice] 8632#7608: signal process started
+2022/12/20 16:29:30 [error] 8632#7608: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:32:51 [notice] 7812#3236: signal process started
+2022/12/20 16:32:51 [error] 7812#3236: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:33:15 [notice] 13984#13200: signal process started
+2022/12/20 16:33:15 [error] 13984#13200: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:33:26 [notice] 17560#17960: signal process started
+2022/12/20 16:33:26 [error] 17560#17960: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:34:02 [notice] 5212#16328: signal process started
+2022/12/20 16:34:02 [error] 5212#16328: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:34:10 [notice] 9800#8188: signal process started
+2022/12/20 16:34:10 [error] 9800#8188: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:34:33 [notice] 5724#16184: signal process started
+2022/12/20 16:34:33 [error] 5724#16184: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:34:59 [notice] 15304#11276: signal process started
+2022/12/20 16:34:59 [error] 15304#11276: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2022/12/20 16:35:52 [notice] 7068#16760: signal process started
+2022/12/20 16:35:52 [error] 7068#16760: CreateFile() "C:\Users\sonme\Downloads\nginx-1.22.1\nginx-1.22.1/logs/nginx.pid" failed (2: The system cannot find the file specified)
